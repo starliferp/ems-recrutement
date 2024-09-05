@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recrutement EMS - StarLife</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Page 1: Informations Personnelles -->
+        <div class="form-page" id="page1">
+            <h2>Informations Personnelles</h2>
+            <form id="recruitmentForm">
+                <div class="section">
+                    <h3>HRP</h3>
+                    <!-- Nom HRP enlevé ici -->
+                    <label for="hrpPrenom">Prénom:</label>
+                    <input type="text" id="hrpPrenom" required>
+
+                    <label for="hrpAge">Âge:</label>
+                    <input type="text" id="hrpAge" required>
+                </div>
+
+                <div class="section">
+                    <h3>RP</h3>
+                    <label for="rpNom">Nom:</label>
+                    <input type="text" id="rpNom" required>
+
+                    <label for="rpPrenom">Prénom:</label>
+                    <input type="text" id="rpPrenom" required>
+
+                    <label for="rpAge">Âge:</label>
+                    <input type="text" id="rpAge" required>
+                </div>
+
+                <button type="button" onclick="nextPage()">Suivant</button>
+            </form>
+        </div>
+
+        <!-- Page 2: Lettre de Motivation -->
+        <div class="form-page" id="page2">
+            <h2>Lettre de Motivation (Max 100 mots.)</h2>
+            <textarea id="motivationLetter" required></textarea>
+            <button type="button" onclick="nextPage()">Suivant</button>
+            <button type="button" onclick="prevPage()">Retour</button>
+        </div>
+
+        <!-- Page 3: Disponibilités -->
+        <div class="form-page" id="page3">
+            <h2>Disponibilités</h2>
+            <div class="availability-section">
+                <h3>Periode Scolaire</h3>
+                <label for="schoolMonday">Disponibilités:</label>
+                <input type="text" id="schoolMonday" required>
+                <!-- Ajoutez les autres jours de la semaine ici -->
+            </div>
+
+            <div class="availability-section">
+                <h3>Vacances</h3>
+                <label for="vacationMonday">Disponibilités:</label>
+                <input type="text" id="vacationMonday" required>
+                <!-- Ajoutez les autres jours de la semaine ici -->
+            </div>
+            <button type="button" onclick="nextPage()">Suivant</button>
+            <button type="button" onclick="prevPage()">Retour</button>
+        </div>
+
+        <!-- Page 4: Qualités & Défauts -->
+        <div class="form-page" id="page4">
+            <h2>Qualités & Défauts</h2>
+            <div class="qualities-defects">
+                <label for="quality1">Qualité 1:</label>
+                <input type="text" id="quality1" required>
+                <label for="quality2">Qualité 2:</label>
+                <input type="text" id="quality2" required>
+                <label for="quality3">Qualité 3:</label>
+                <input type="text" id="quality3" required>
+
+                <label for="defect1">Défaut 1:</label>
+                <input type="text" id="defect1" required>
+                <label for="defect2">Défaut 2:</label>
+                <input type="text" id="defect2" required>
+                <label for="defect3">Défaut 3:</label>
+                <input type="text" id="defect3" required>
+            </div>
+            <button type="button" onclick="nextPage()">Suivant</button>
+            <button type="button" onclick="prevPage()">Retour</button>
+        </div>
+
+        <!-- Page 5: Choses à Rajouter -->
+        <div class="form-page" id="page5">
+            <h2>Informations complémentaire</h2>
+            <textarea id="additionalInfo"></textarea>
+            <button type="button" onclick="nextPage()">Suivant</button>
+            <button type="button" onclick="prevPage()">Retour</button>
+        </div>
+
+        <!-- Page 6: Acceptation et Envoi -->
+        <div class="form-page" id="page6">
+            <h2>Acceptation et Téléchargement</h2>
+            <label>
+                <input type="checkbox" id="acceptRules" required>
+                J'accepte le règlement EMS
+            </label>
+            <button type="button" onclick="submitForm()">Télécharger votre CV</button>
+            <button type="button" onclick="showPage(0)">Recharger la page</button>
+        </div>
+    </div>
+
+    <!-- Inclure le script jsPDF depuis un CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- Votre script personnalisé -->
+    <script src="script.js"></script>
+    <script src="config.js"></script>
+</body>
+</html>
